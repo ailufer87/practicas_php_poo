@@ -32,7 +32,7 @@ class Venta
 
     public function cargarFormulario($request)
     {
-        $this->idventa = isset($request["id"]) ? $request["id"] : "";
+        $this->idventa = isset($request["idventa"]) ? $request["idventa"] : "";
         $this->fk_idcliente = isset($request["lstfk_idcliente"]) ? $request["lstfk_idcliente"] : "";
         $this->fk_idproducto = isset($request["lstfk_idproducto"]) ? $request["lstfk_idproducto"] : "";
         $this->cantidad = isset($request["txtcantidad"]) ? $request["txtcantidad"] : "";
