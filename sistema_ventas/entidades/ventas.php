@@ -83,7 +83,7 @@ class Venta
     {
 
         $mysqli = new mysqli(Config::BBDD_HOST, Config::BBDD_USUARIO, Config::BBDD_CLAVE, Config::BBDD_NOMBRE, Config::BBDD_PORT);
-        $sql = "UPDATE productos SET
+        $sql = "UPDATE ventas SET
                 fk_idcliente = '" . $this->fk_idcliente . "',
                 fk_idproducto = '" . $this->fk_idproducto . "',
                 fecha = '" . $this->fecha . "',
