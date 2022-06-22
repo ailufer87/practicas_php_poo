@@ -1,6 +1,6 @@
 <?php
 
-class Productos
+class Producto
 {
     private $idproducto;
     private $nombre;
@@ -166,11 +166,6 @@ class Productos
                 $entidadAux->cantidad = $fila["cantidad"];
                 $entidadAux->precio = $fila["precio"];
                 $entidadAux->descripcion = $fila["descripcion"];
-                if(isset($fila["descripcion"])){
-                    $entidadAux->descripcion = $fila["descripcion"];
-                } else {
-                    $entidadAux->descripcion = "";
-                }
                 $entidadAux->imagen = $fila["imagen"];
                 $entidadAux->fk_idtipoproducto = $fila["fk_idtipoproducto"];
                 

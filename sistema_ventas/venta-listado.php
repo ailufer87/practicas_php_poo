@@ -42,7 +42,7 @@ include_once("header.php");
                   <td><?php echo $venta->total; ?></td>
                   
                   <td style="width: 110px;">
-                      <a href="venta-formulario.php?id=<?php echo $venta->idventa; ?>"><i class="fas fa-search"></i></a>   
+                      <a href="venta_formulario.php?id=<?php echo $venta->idventa; ?>"><i class="fas fa-search"></i></a>   
                   </td>
               </tr>
             <?php endforeach; ?>
