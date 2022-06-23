@@ -36,10 +36,10 @@ class TipoProducto
         $mysqli = new mysqli(Config::BBDD_HOST, Config::BBDD_USUARIO, Config::BBDD_CLAVE, Config::BBDD_NOMBRE, Config::BBDD_PORT);
         //Arma la query
         $sql = "INSERT INTO tipo_productos (
-                    nombre,
+                    nombre
                     
                 ) VALUES (
-                    '$this->nombre',
+                    '$this->nombre'
                     
                 );";
         // print_r($sql);exit;

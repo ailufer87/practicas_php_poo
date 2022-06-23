@@ -33,11 +33,11 @@ class Producto
     {
         $this->idproducto = isset($request["id"]) ? $request["id"] : "";
         $this->nombre = isset($request["txtNombre"]) ? $request["txtNombre"] : "";
-        $this->cantidad = isset($request["txtcantidad"]) ? $request["txtcantidad"] : "";
-        $this->precio = isset($request["txtprecio"]) ? $request["txtprecio"] : "";
-        $this->descripcion= isset($request["lstdescripcion"]) ? $request["lstdescripcion"] : "";
+        $this->cantidad = isset($request["txtCantidad"]) ? $request["txtCantidad"] : "";
+        $this->precio = isset($request["txtPrecio"]) ? $request["txtPrecio"] : "";
+        $this->descripcion= isset($request["lstDescripcion"]) ? $request["lstDescripcion"] : "";
         $this->imagen = isset($request["imagen"]) ? $request["imagen"] : "";
-        $this->fk_idtipoproducto = isset($request["lstfk_idtipoproducto"]) ? $request["lstfk_idtipoproducto"] : "";
+        $this->fk_idtipoproducto = isset($request["lstFk_idtipoproducto"]) ? $request["lstFk_idtipoproducto"] : "";
         
     }
 

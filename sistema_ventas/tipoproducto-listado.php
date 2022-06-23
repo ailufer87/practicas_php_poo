@@ -19,7 +19,7 @@ include_once("header.php");
           <h1 class="h3 mb-4 text-gray-800">Listado de tipos de productos</h1>
           <div class="row">
                 <div class="col-12 mb-3">
-                    <a href="tipoproductos_formulario.php" class="btn btn-primary mr-2">Nuevo</a>
+                    <a href="tipoproductos-formulario.php" class="btn btn-primary mr-2">Nuevo</a>
                 </div>
             </div>
           <table class="table table-hover border">
@@ -33,7 +33,7 @@ include_once("header.php");
                   <td><?php echo $tipoProducto->nombre; ?></td>
                   
                   <td style="width: 110px;">
-                      <a href="tipoproductos_formulario.php?id=<?php echo $tipoProducto->idtipoproducto; ?>"><i class="fas fa-search"></i></a>   
+                      <a href="tipoproductos-formulario.php?id=<?php echo $tipoProducto->idtipoproducto; ?>"><i class="fas fa-search"></i></a>   
                   </td>
               </tr>
             <?php endforeach; ?>

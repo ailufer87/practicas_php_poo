@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include_once "config.php";
-include_once "entidades/usuario.php";
+include_once "entidades/usuarios.php";
 
 $pg = "Edición de usuario";
 

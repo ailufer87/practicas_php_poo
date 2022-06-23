@@ -1,5 +1,5 @@
 <?php
-if (session_status()===PHP_SESSION_NONE) session_start();
+include_once "config.php";
 
 if ($_POST){
   if (isset($_POST["btnCerrar"])){

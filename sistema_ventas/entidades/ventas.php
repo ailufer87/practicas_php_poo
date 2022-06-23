@@ -33,10 +33,10 @@ class Venta
     public function cargarFormulario($request)
     {
         $this->idventa = isset($request["id"]) ? $request["id"] : "";
-        $this->fk_idcliente = isset($request["lstfk_idcliente"]) ? $request["lstfk_idcliente"] : "";
-        $this->fk_idproducto = isset($request["lstfk_idproducto"]) ? $request["lstfk_idproducto"] : "";
-        $this->cantidad = isset($request["txtcantidad"]) ? $request["txtcantidad"] : "";
-        $this->preciounitario = isset($request["txtpreciounitario"]) ? $request["txtpreciounitario"] : "";
+        $this->fk_idcliente = isset($request["lstFk_idcliente"]) ? $request["lstFk_idcliente"] : "";
+        $this->fk_idproducto = isset($request["lstFk_idproducto"]) ? $request["lstFk_idproducto"] : "";
+        $this->cantidad = isset($request["txtCantidad"]) ? $request["txtCantidad"] : "";
+        $this->preciounitario = isset($request["txtPreciounitario"]) ? $request["txtPreciounitario"] : "";
         $this->total = isset($request["total"]) ? $request["total"] : "";
         
         if (isset($request["txtAnio"]) && isset($request["txtMes"]) && isset($request["txtDia"])) {
