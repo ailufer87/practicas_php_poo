@@ -13,7 +13,7 @@ class Producto
 
     public function __construct()
     {
-        $this-> cantidado=0;
+        $this-> cantidad=0;
         $this-> precio=0;
 
     }
@@ -35,7 +35,7 @@ class Producto
         $this->nombre = isset($request["txtNombre"]) ? $request["txtNombre"] : "";
         $this->cantidad = isset($request["txtCantidad"]) ? $request["txtCantidad"] : "";
         $this->precio = isset($request["txtPrecio"]) ? $request["txtPrecio"] : "";
-        $this->descripcion= isset($request["lstDescripcion"]) ? $request["lstDescripcion"] : "";
+        $this->descripcion= isset($request["txtDescripcion"]) ? $request["txtDescripcion"] : "";
         $this->imagen = isset($request["imagen"]) ? $request["imagen"] : "";
         $this->fk_idtipoproducto = isset($request["lstFk_idtipoproducto"]) ? $request["lstFk_idtipoproducto"] : "";
         
@@ -52,7 +52,7 @@ class Producto
                     precio,
                     descripcion,
                     imagen,
-                    fk_idtipoproducto,
+                    fk_idtipoproducto
                     
                 ) VALUES (
                     '$this->nombre',
@@ -62,7 +62,7 @@ class Producto
                     '$this->imagen',
                     $this->fk_idtipoproducto
                 );";
-        // print_r($sql);exit;
+         //print_r($sql);exit;
         //Ejecuta la query
         if (!$mysqli->query($sql)) {
             printf("Error en query: %s\n", $mysqli->error . " " . $sql);

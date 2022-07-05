@@ -18,6 +18,8 @@ if($_POST){
               $cliente->actualizar();
         } else {
             //Es nuevo
+           
+        
             $cliente->insertar();
         }
         $msg["texto"] = "Guardado correctamente";

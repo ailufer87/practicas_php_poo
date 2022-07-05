@@ -17,13 +17,31 @@ if ($_POST) {
             $venta->actualizar();
         } else {
             //Es nuevo
-            $venta->insertar();
+            
+            $producto = new Producto();
+            $producto->idproducto = $venta->fk_idproducto;
+            $producto->obtenerPorId();
+
+            if($venta->cantidad <= $producto->cantidad){
+                $total = $venta->cantidad * $producto->precio;
+                $venta->total = $total;
+                $venta->insertar();
+
+                $producto->cantidad -= $venta->cantidad;
+                $producto->actualizar();
+
+                $msg["texto"] = "Guardado correctamente";
+                $msg["codigo"] = "alert-success";
+
+            } else {
+                $msg["texto"] = "No hay stock suficiente";
+            }
         }
-        $msg["texto"] = "Guardado correctamente";
-        $msg["codigo"] = "alert-success";
+
     } else if (isset($_POST["btnBorrar"])) {
+
         $venta->eliminar();
-        header("Location: cliente-listado.php");
+        header("Location: venta-formulario.php");
     }
 }
 
@@ -71,7 +89,7 @@ include_once("header.php");
 
                 <?php foreach ($aClientes as $cliente) : ?>
                     <?php if ($cliente->idcliente == $cliente->fk_idcliente) : ?>
-                        <option value="<?php echo $cliente->idcliente; ?>"><?php echo $cliente->nombre; ?></option>
+                        <option selected value="<?php echo $cliente->idcliente; ?>"><?php echo $cliente->nombre; ?></option>
                     <?php else : ?>
                         <option value="<?php echo $cliente->idcliente; ?>"><?php echo $cliente->nombre; ?></option>
                     <?php endif; ?>
@@ -91,7 +109,7 @@ include_once("header.php");
 
                 <?php foreach ($aProductos as $producto) : ?>
                     <?php if ($producto->idproducto == $producto->lstFk_idproducto) : ?>
-                        <option value="<?php echo $producto->idproducto; ?>"><?php echo $producto->nombre; ?></option>
+                        <option selected value="<?php echo $producto->idproducto; ?>"><?php echo $producto->nombre; ?></option>
                     <?php else : ?>
                         <option value="<?php echo $producto->idproducto; ?>"><?php echo $producto->nombre; ?></option>
                     <?php endif; ?>

@@ -35,7 +35,7 @@ include_once("header.php");
                   <td><?php echo $producto->cantidad; ?></td>
                   <td><?php echo $producto->precio; ?></td>
                   <td><?php echo $producto->descripcion; ?></td>
-                  <td><?php echo $producto->imagen; ?></td>
+                  <td><img src="files/<?php echo $producto->imagen; ?>" class="img-thumbnail"></td>
                   <td><?php echo $producto->fk_idtipoproducto; ?></td>
                   <td style="width: 110px;">
                       <a href="producto-formulario.php?id=<?php echo $producto->idproducto; ?>"><i class="fas fa-search"></i></a>   

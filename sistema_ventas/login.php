@@ -4,18 +4,21 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
+include_once "entidades/usuarios.php";
+include_once "config.php";
 
 if($_POST){
   $usuario = trim($_REQUEST["txtUsuario"]);
   $clave = trim($_REQUEST["txtClave"]);
 
-  //Si el usuario es admin y la clave es admin123
-    //Crear una variable de session con tu nombre
-    //Redireccionar a index.php
-    //sino
-    //$msg = "Usuario o clave incorrecto";
+  //BUscamos en la BBDD si existe el usuario que ingreso la persona
+  //METODO: obtenerPorUsuario
+  $entidadUsuario= new Usuario();
+  $entidadUsuario-> obtenerPorUsuario($usuario);
 
-  if ($usuario== "admin" && $clave=="admin123"){
+  //si existe,comprobamos que la clave se correlacione con el usuario
+
+  if ($entidadUsuario->usuario !="" && password_verify($clave,$entidadUsuario->clave )){
     $_SESSION["nombre"] = "ailen";
     header("Location:index.php");
   } else{
